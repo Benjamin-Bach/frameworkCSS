@@ -1,0 +1,60 @@
+// settings
+
+$nbColumns: 12;
+$marge: 2rem;
+$margeBottom: $marge;
+$smPoint: 480px;
+$mdPoint: 800px;
+$lgPoint: 1200px;
+
+// grid container classes
+
+.grid-container{
+  overflow: hidden;
+  .flex{
+    margin-right: -$marge;
+    > *{
+      margin-right: $marge;
+      margin-bottom: $margeBottom;
+    }
+  }
+}
+.flex{
+  display: flex;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-right{
+  justify-content: flex-end;
+}
+
+// generate grid items
+
+@for $i from 1 through $nbColumns{
+  .item-#{$i}{
+    flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+  }
+  @media (min-width: #{$smPoint}){
+    .item-sm-#{$i}{
+      background: red;
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+  @media (min-width: #{$mdPoint}){
+    .item-md-#{$i}{
+      background: blue;
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+  @media (min-width: #{$lgPoint}){
+    .item-lg-#{$i}{
+      background: blue;
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+}
+

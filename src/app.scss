@@ -1,0 +1,20 @@
+// imports
+@import 'reset.scss';
+@import 'grid.scss';
+
+// utils
+html{
+  font-size: 16px;
+}
+body{
+  font-size: 100%;
+  line-height: 1.2;
+}
+*{
+  box-sizing: border-box;
+}
+img{
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
