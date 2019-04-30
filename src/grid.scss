@@ -40,19 +40,16 @@ $lgPoint: 1200px;
   }
   @media (min-width: #{$smPoint}){
     .item-sm-#{$i}{
-      background: red;
       max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
     }
   }
   @media (min-width: #{$mdPoint}){
     .item-md-#{$i}{
-      background: blue;
       max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
     }
   }
   @media (min-width: #{$lgPoint}){
     .item-lg-#{$i}{
-      background: blue;
       max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
     }
   }
