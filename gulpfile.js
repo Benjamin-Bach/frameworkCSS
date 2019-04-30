@@ -22,12 +22,12 @@ var browsersync = false;
 
 gulp.task('css-prod', () => {
   return gulp.src('./src/*.scss')
-  .pipe(plugins.sass())
+  .pipe(plugins.sass({outputStyle: 'compressed'}))
+  .pipe(plugins.groupCssMediaQueries())
   .pipe(plugins.autoprefixer({
     browsers: ['last 2 versions', '> 2%']
   }))
-  .pipe(plugins.cssbeautify({indent: '  '}))
-  .pipe(gulp.dest('./build/'));
+  .pipe(gulp.dest('./build/'))
 });
 
 gulp.task('css-dev', () => {
