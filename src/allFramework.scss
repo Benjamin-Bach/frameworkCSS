@@ -1,15 +1,10 @@
 // imports
 @import 'reset.scss';
+@import 'typo.scss';
 @import 'grid.scss';
 
 // utils
-html{
-  font-size: 16px;
-}
-body{
-  font-size: 100%;
-  line-height: 1.2;
-}
+
 *{
   box-sizing: border-box;
 }
