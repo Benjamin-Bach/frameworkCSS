@@ -3,6 +3,7 @@
 $nbColumns: 12;
 $marge: 2rem;
 $margeBottom: $marge;
+$xsPoint: 479px;
 $smPoint: 480px;
 $mdPoint: 800px;
 $lgPoint: 1200px;
@@ -38,20 +39,36 @@ $lgPoint: 1200px;
   .item-#{$i}{
     flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
   }
-  @media (min-width: #{$smPoint}){
-    .item-sm-#{$i}{
+}
+@media (max-width: #{$xsPoint}){
+  @for $i from 1 through $nbColumns{
+    .item-xs-#{$i}{
       max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
-    }
-  }
-  @media (min-width: #{$mdPoint}){
-    .item-md-#{$i}{
-      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
-    }
-  }
-  @media (min-width: #{$lgPoint}){
-    .item-lg-#{$i}{
-      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+      flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
     }
   }
 }
-
+@media (min-width: #{$smPoint}){
+  @for $i from 1 through $nbColumns{
+    .item-sm-#{$i}{
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+      flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+}
+@media (min-width: #{$mdPoint}){
+  @for $i from 1 through $nbColumns{
+    .item-md-#{$i}{
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+      flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+}
+@media (min-width: #{$lgPoint}){
+  @for $i from 1 through $nbColumns{
+    .item-lg-#{$i}{
+      max-width: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+      flex-basis: calc((100% / (#{$nbColumns} / #{$i})) - #{$marge});
+    }
+  }
+}
