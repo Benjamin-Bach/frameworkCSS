@@ -123,3 +123,22 @@ img{
 .no-padding{
   padding: 0 !important;
 }
+
+@mixin marginDyn($marge){
+  @for $i from 1 through 4{
+    .m-#{$i}{ margin: $marge * $i; }
+    .mt-#{$i}{ margin-top: $marge * $i; }
+    .ml-#{$i}{ margin-left: $marge * $i; }
+    .mb-#{$i}{ margin-bottom: $marge * $i; }
+    .mr-#{$i}{ margin-right: $marge * $i; }
+    .p-#{$i}{ padding: $marge * $i; }
+    .pt-#{$i}{ padding-top: $marge * $i; }
+    .pl-#{$i}{ padding-left: $marge * $i; }
+    .pb-#{$i}{ padding-bottom: $marge * $i; }
+    .pr-#{$i}{ padding-right: $marge * $i; }
+  }
+}
+@include marginDyn($marge);
+@media (max-width: #{$xsPoint}){
+  @include marginDyn($marge / 2);
+}
